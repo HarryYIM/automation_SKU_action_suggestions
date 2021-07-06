@@ -64,7 +64,7 @@ def getResult(nbDays = 30):
     df['Trend'] = df['Sales_Description'] + df['Margin_Description']
     df = df.merge(suggested_actions, on = 'Trend', how='left')
 
-    df.drop(columns={'Trend'}).round(1).to_csv(f'..//results//4D_SKU_{nbDays}D_{today_formated}.csv', index=False)
+    df.drop(columns={'Trend'}).round(1).to_csv(f'..//results//4D_SKU_{nbDays}D_{today_formated}.csv', index=False, encoding='utf-8-sig')
     return
 
 if __name__ == '__main__':
